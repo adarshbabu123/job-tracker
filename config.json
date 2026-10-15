@@ -1,0 +1,141 @@
+{
+  "user_profile": {
+    "years_experience": 2,
+    "skills": [
+      "AWS", "Azure", "GCP", "Terraform", "Docker", "Kubernetes",
+      "GitHub Actions", "Jenkins", "Linux", "Nginx", "Apache",
+      "CI/CD", "Prometheus", "Grafana", "CloudWatch", "Ansible",
+      "Helm", "EC2", "S3", "VPC", "RDS", "WordPress",
+      "cPanel", "RunCloud", "Python", "Bash"
+    ]
+  },
+
+  "job_titles": [
+    "DevOps Engineer",
+    "Junior DevOps Engineer",
+    "Cloud Engineer",
+    "AWS Engineer",
+    "Platform Engineer",
+    "Site Reliability Engineer",
+    "SRE",
+    "Linux Administrator",
+    "Linux Engineer",
+    "Infrastructure Engineer",
+    "Cloud Support Engineer",
+    "CI/CD Engineer",
+    "Kubernetes Engineer",
+    "Terraform Engineer",
+    "Cloud Operations Engineer",
+    "Build and Release Engineer",
+    "Systems Engineer"
+  ],
+
+  "locations": {
+    "priority": [
+      "Bengaluru", "Bangalore",
+      "Kochi", "Cochin",
+      "Kozhikode", "Calicut",
+      "Thiruvananthapuram", "Trivandrum",
+      "Chennai",
+      "Coimbatore",
+      "Hyderabad",
+      "Mysuru", "Mysore",
+      "Visakhapatnam", "Vizag"
+    ],
+    "india_cities": [
+      "Mumbai", "Delhi", "Pune", "Noida", "Gurugram", "Gurgaon",
+      "Kolkata", "Ahmedabad", "Jaipur", "Chandigarh", "Indore",
+      "Nagpur", "Surat", "Bhopal"
+    ],
+    "india_keywords": ["India", "IN", "Karnataka", "Kerala", "Tamil Nadu",
+                       "Andhra Pradesh", "Telangana", "Maharashtra"],
+    "remote_eligible_keywords": ["remote", "work from home", "wfh",
+                                 "remote india", "india remote"],
+    "exclude_keywords": ["US only", "UK only", "EU only", "must be in US",
+                         "must be in UK", "authorized to work in the US",
+                         "US citizen", "US work authorization",
+                         "must be based in"]
+  },
+
+  "filters": {
+    "max_listing_age_days": 30,
+    "min_match_score": 30,
+    "high_match_threshold": 65,
+    "required_keywords": [],
+    "exclude_keywords": ["senior", "lead", "manager", "director", "head of",
+                         "staff engineer", "principal", "10+ years", "8+ years",
+                         "7+ years", "architect"]
+  },
+
+  "scoring": {
+    "weights": {
+      "skill_overlap": 40,
+      "role_relevance": 25,
+      "experience_match": 15,
+      "location_priority": 15,
+      "posting_freshness": 5
+    },
+    "freshness_thresholds_days": {
+      "very_fresh": 3,
+      "fresh": 7,
+      "recent": 14,
+      "older": 30
+    }
+  },
+
+  "sources": {
+    "remotive": {
+      "enabled": true,
+      "base_url": "https://remotive.com/api/remote-jobs",
+      "categories": ["devops", "software-dev", "sysadmin"],
+      "rate_limit_seconds": 2
+    },
+    "arbeitnow": {
+      "enabled": true,
+      "base_url": "https://www.arbeitnow.com/api/job-board-api",
+      "rate_limit_seconds": 2
+    },
+    "greenhouse": {
+      "enabled": true,
+      "company_boards": [
+        "thoughtworks",
+        "razorpay",
+        "freshworks",
+        "browserstack",
+        "hasura",
+        "chargebee",
+        "clevertap",
+        "postman"
+      ],
+      "rate_limit_seconds": 1
+    },
+    "lever": {
+      "enabled": true,
+      "company_boards": [
+        "razorpay",
+        "freshworks",
+        "setu",
+        "niyo",
+        "slice"
+      ],
+      "rate_limit_seconds": 1
+    }
+  },
+
+  "google_sheets": {
+    "sheet_id_env": "GOOGLE_SHEET_ID",
+    "credentials_env": "GOOGLE_SERVICE_ACCOUNT_JSON",
+    "worksheets": {
+      "all_jobs": "All Jobs",
+      "today_jobs": "Today's Jobs",
+      "high_match": "High Match",
+      "tracker": "Application Tracker"
+    }
+  },
+
+  "run": {
+    "log_level": "INFO",
+    "request_timeout_seconds": 15,
+    "max_jobs_per_source": 200
+  }
+}
